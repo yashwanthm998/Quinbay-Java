@@ -1,4 +1,3 @@
-
 public class Welcome_to_Java {
 
     public static void main(String[] args) {
