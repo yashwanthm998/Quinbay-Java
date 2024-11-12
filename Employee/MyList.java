@@ -69,6 +69,16 @@ class Operations {
     public int size() {
         return size;
     }
+    public void displayList() {
+        if (size == 0) {
+            System.out.println("The list is empty.");
+            return;
+        }
+        System.out.println("Employee List:");
+        for (int i = 0; i < size; i++) {
+            System.out.println(array[i]);
+        }
+    }
 }
 
 public class MyList {
@@ -87,7 +97,8 @@ public class MyList {
             System.out.println("3. Delete an Employee by value");
             System.out.println("4. Retrieve an Employee by index");
             System.out.println("5. Display list size");
-            System.out.println("6. Exit");
+            System.out.println("6. Display all Employees");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
 
@@ -102,7 +113,6 @@ public class MyList {
                     System.out.print("Enter Employee Date of Joining (yyyy-mm-dd): ");
                     String dateString = scanner.next();
 
-    
                     try {
                         Date dateOfJoining = sdf.parse(dateString);
                         Employee employee = new Employee(id, name, age, dateOfJoining);
@@ -159,6 +169,10 @@ public class MyList {
                     break;
 
                 case 6:
+                    list.displayList();
+                    break;
+
+                case 7:
                     System.out.println("Exiting program.");
                     scanner.close();
                     return;
