@@ -62,8 +62,17 @@ class operations {
             array = newArray;
         }
     }
-    public int size() {
-        return size;
+
+    public void displayList() {
+        if (size == 0) {
+            System.out.println("The list is empty.");
+            return;
+        }
+
+        System.out.println("List contents:");
+        for (int i = 0; i < size; i++) {
+            System.out.println(array[i]);
+        }
     }
 }
 
@@ -80,7 +89,7 @@ public class MyList {
             System.out.println("2. Delete an element by index");
             System.out.println("3. Delete an element by value");
             System.out.println("4. Retrieve a value by index");
-            System.out.println("5. Display list size");
+            System.out.println("5. Display list");
             System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
@@ -122,7 +131,7 @@ public class MyList {
                     break;
 
                 case 5:
-                    System.out.println("Current list size: " + list.size());
+                    list.displayList();
                     break;
 
                 case 6:
